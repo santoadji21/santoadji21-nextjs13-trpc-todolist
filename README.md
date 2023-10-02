@@ -47,6 +47,8 @@ Follow the steps below to set up and run the project:
 
    ```bash
    pnpm install
+
+
    ```
 
 3. **Run in Development Mode**
@@ -66,5 +68,5 @@ Follow the steps below to set up and run the project:
 <img src="https://github.com/santoadji21/santoadji21-nextjs13-trpc-todolist/blob/master/screenshot/todo-app.png" width="500" />
 
 # Demo App
+https://github.com/santoadji21/santoadji21-nextjs13-trpc-todolist/assets/49109789/db5188fd-10b1-4468-abda-347febbfd623
 
-https://github.com/santoadji21/santoadji21-nextjs13-trpc-todolist/blob/master/screenshot/trpc-todolist.mov

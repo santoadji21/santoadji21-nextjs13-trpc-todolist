@@ -68,6 +68,6 @@ Follow the steps below to set up and run the project:
 # Demo App
 
 <video width="500" controls>
-    <source src="https://github.com/santoadji21/santoadji21-nextjs13-trpc-todolist/blame/master/screenshot/trpc-todolist.webm" type="video/webm">
+    <source src="https://github.com/santoadji21/santoadji21-nextjs13-trpc-todolist/blame/master/screenshot/trpc-todolist.mp4" type="video/webm">
    
 </video>

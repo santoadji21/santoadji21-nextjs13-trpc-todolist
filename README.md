@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TodoList App
 
-## Getting Started
+A simple TodoList app built with Next.js. Organize and manage your tasks effortlessly.
 
-First, run the development server:
+## Dependencies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js**:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  - A popular React framework that offers features like server-side rendering and static site generation, facilitating the development of optimized web applications with improved performance.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **TypeScript**:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  - A superset of JavaScript that introduces static types, enabling developers to write more reliable and maintainable code. It provides advanced type-checking and autocompletion for a safer development experience.
 
-## Learn More
+- **TRPC**:
 
-To learn more about Next.js, take a look at the following resources:
+  - A set of tools and libraries to make powerful and type-safe APIs using TypeScript. It simplifies the connection between your APIs and your React components.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Prisma**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  - An open-source database toolkit that includes an ORM (Object-Relational Mapper) for TypeScript and JavaScript. It provides a type-safe way to perform database operations, enhancing productivity and reducing runtime errors.
 
-## Deploy on Vercel
+- **Zod**:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  - A TypeScript-first schema validation library. It helps ensure data consistency and integrity by defining and validating data structures and forms.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **React Hook Form**:
+
+  - A performance-focused React library for building forms. It leverages hooks to simplify form validation and data collection, making form management straightforward and efficient.
+
+- **React Query**:
+  - A data-fetching and state management library for React. It provides hooks to fetch, cache, and synchronize server state in your application, reducing boilerplate and improving user experience.
+
+## Setup Guide
+
+Follow the steps below to set up and run the project:
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/santoadji21/santoadji21-nextjs13-trpc-todolist.git trpc-todolist
+   cd trpc-todolist
+
+   ```
+
+2. **Install Dependencies**
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Run in Development Mode**
+
+   ```bash
+   pnpm dev
+   ```
+
+4. **Build for Production**
+
+   ```bash
+   pnpm build
+   ```
+
+# Screenshots
+
+<img src="https://github.com/santoadji21/santoadji21-nextjs13-trpc-todolist/screenshot/todo-app.png" width="500" />
+
+# Demo App
+
+<video width="500" controls>
+    <source src="https://github.com/santoadji21/santoadji21-nextjs13-trpc-todolist/screenshot/trpc-todolist.webm" type="video/webm">
+   
+</video>

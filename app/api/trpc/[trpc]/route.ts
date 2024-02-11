@@ -1,5 +1,6 @@
 import { appRouter } from '@/app/api/root';
 import { FetchCreateContextFnOptions, fetchRequestHandler } from '@trpc/server/adapters/fetch';
+import { NextApiResponse } from 'next';
 
 const VERCEL_BASE_URL = process.env.VERCEL_BASE_URL;
 
@@ -7,7 +8,10 @@ const VERCEL_BASE_URL = process.env.VERCEL_BASE_URL;
 //   throw new Error('VERCEL_BASE_URL environment variable is not set');
 // }
 
-const handler = (request: Request) => {
+const handler = (request: Request, response: NextApiResponse) => {
+  response.setHeader('Access-Control-Allow-Origin', '*'); 
+  response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); 
+  response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Authorization'); 
   console.log(`incoming request ${request.url}`);
   return fetchRequestHandler({
     endpoint: '/api/trpc',

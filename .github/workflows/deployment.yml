@@ -18,7 +18,7 @@ jobs:
         run: |
           echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
           deployment_url=$(vercel --token=${{ secrets.VERCEL_TOKEN }} | grep -o 'https://[a-zA-Z0-9-]*\.vercel\.app')
-          echo "VERCEL_BASE_URL=$deployment_url" >> .env
+          echo "NEXT_PUBLIC_VERCEL_URL=$deployment_url" >> .env
       - name: Install project dependencies
         run: pnpm install
       # - name: Prisma DB Push Reset DB

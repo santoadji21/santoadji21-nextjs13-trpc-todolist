@@ -10,8 +10,7 @@ const VERCEL_BASE_URL = process.env.VERCEL_BASE_URL;
 const handler = (request: Request) => {
   console.log(`incoming request ${request.url}`);
   return fetchRequestHandler({
-    endpoint: `/api/trpc`,
-    // endpoint: `${VERCEL_BASE_URL}/api/trpc`,
+    endpoint: '/api/trpc',
     req: request,
     router: appRouter,
     createContext: function (opts: FetchCreateContextFnOptions): object | Promise<object> {

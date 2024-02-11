@@ -3,7 +3,7 @@ name: Vercel Production Deployment
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   Deploy-Production:
@@ -15,7 +15,9 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: |
+          deployment_url=$(vercel --token=${{ secrets.VERCEL_TOKEN }} | grep -o 'https://[a-zA-Z0-9-]*\.vercel\.app')
+          echo "VERCEL_BASE_URL=$deployment_url" >> .env
       - name: Inject secrets into .env
         run: |
           echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env

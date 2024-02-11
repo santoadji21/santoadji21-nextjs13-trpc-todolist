@@ -21,6 +21,8 @@ jobs:
           echo "VERCEL_BASE_URL=$deployment_url" >> .env
       - name: Install project dependencies
         run: pnpm install
+      # - name: Prisma DB Push Reset DB
+      #   run: pnpm db:push
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel

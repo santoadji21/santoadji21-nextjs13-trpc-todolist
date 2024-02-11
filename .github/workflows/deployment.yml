@@ -18,7 +18,7 @@ jobs:
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - name: Inject secrets into .env
         run: |
-          echo "SECRET_KEY=${{ secrets.DATABASE_URL }}" >> .env
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
       - name: Install project dependencies
         run: pnpm install
       - name: Build Project Artifacts

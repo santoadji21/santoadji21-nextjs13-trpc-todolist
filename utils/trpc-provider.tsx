@@ -32,6 +32,7 @@ export const TrpcProvider: React.FC<{ children: React.ReactNode }> = ({ children
             const fetch = getFetch();
             return fetch(input, {
               ...init,
+              credentials: 'omit',
             });
           }
         })

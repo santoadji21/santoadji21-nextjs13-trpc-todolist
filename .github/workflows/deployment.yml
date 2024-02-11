@@ -21,6 +21,8 @@ jobs:
           echo "NEXT_PUBLIC_VERCEL_URL=$deployment_url" >> .env
       - name: Install project dependencies
         run: pnpm install
+      - name: Prisma Generate
+        run: pnpm db:generate
       # - name: Prisma DB Push Reset DB
       #   run: pnpm db:push
       - name: Build Project Artifacts

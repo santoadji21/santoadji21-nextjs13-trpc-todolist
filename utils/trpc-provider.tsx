@@ -1,12 +1,12 @@
 'use client';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { httpBatchLink, getFetch, loggerLink } from '@trpc/client';
+import { getFetch, httpBatchLink, loggerLink } from '@trpc/client';
 import { useState } from 'react';
 import superjson from 'superjson';
 
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { trpc } from '@/utils/api';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 export const TrpcProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [queryClient] = useState(
@@ -30,10 +30,23 @@ export const TrpcProvider: React.FC<{ children: React.ReactNode }> = ({ children
           url,
           fetch: async (input, init?) => {
             const fetch = getFetch();
+         const headers = new Headers(init?.headers);
+          headers.set('Content-Type', 'application/json');
+    headers.set('Accept', 'application/json');
+    headers.set('Access-Control-Allow-Origin', '*');
+    headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+    headers.set('Access-Control-Allow-Headers', 'Content-Type');
+
+    // Update init object with the modified headers
+    init = {
+      ...init,
+      headers: headers,
+    };
+
             return fetch(input, {
               ...init,
               credentials: 'include',
-              mode:'no-cors'
+              // mode:'no-cors'
             });
           }
         })

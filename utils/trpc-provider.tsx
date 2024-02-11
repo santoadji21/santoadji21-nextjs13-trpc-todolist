@@ -17,7 +17,7 @@ export const TrpcProvider: React.FC<{ children: React.ReactNode }> = ({ children
   );
 
   const url = process.env.NEXT_PUBLIC_VERCEL_URL
-    ? `https://santoadji21-nextjs13-trpc-todolist.vercel.app/`
+    ? `https://santoadji21-nextjs13-trpc-todolist.vercel.app/api/trpc/`
     : 'http://localhost:3000/api/trpc/';
 
   const [trpcClient] = useState(() =>
@@ -32,7 +32,7 @@ export const TrpcProvider: React.FC<{ children: React.ReactNode }> = ({ children
             const fetch = getFetch();
             return fetch(input, {
               ...init,
-              credentials: 'same-origin',
+              credentials: 'include',
               mode:'no-cors'
             });
           }

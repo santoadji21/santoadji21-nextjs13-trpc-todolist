@@ -1,8 +1,11 @@
 name: Vercel Production Deployment
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Deploy to Vercel'
+        default: 'vercel'
+
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest

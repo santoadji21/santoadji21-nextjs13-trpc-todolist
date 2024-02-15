@@ -157,7 +157,7 @@ export default function Home() {
     <div className="mx-auto mt-20 max-w-3xl">
       {ConfettiCanvas}
       <Toaster richColors position="bottom-center" duration={3000} />
-      <div className="bg-primary flex min-h-[150px] items-center justify-center rounded-2xl  ">
+      <div className="flex min-h-[150px] items-center justify-center rounded-2xl bg-primary  ">
         <h1 className="text-6xl font-extrabold text-white">TODO LIST</h1>
       </div>
       <div className="my-6 flex flex-col gap-3">

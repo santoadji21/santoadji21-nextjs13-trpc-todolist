@@ -200,45 +200,51 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col gap-3">
-        {listTodo
-          ?.filter((todo) => todo.id !== toBeDeletedId)
-          ?.map((todo) => (
-            <div
-              key={todo.id}
-              className="flex items-center justify-between rounded bg-slate-100 p-3">
-              <div className="flex items-center gap-2">
-                <Button
-                  variant="link"
-                  onClick={() => {
-                    if (todo.completed) return;
-                    handleCompleteTodo(todo.id, !todo.completed);
-                  }}>
-                  {todo.completed ? <IconCircleCheckFilled /> : <IconCircle />}
-                </Button>
-                <h6>{todo.title}</h6>
-              </div>
-              <div className="flex items-center gap-2">
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <div>{getPriority(todo.priority)}</div>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{capitalizeFirstLetter(todo.priority)}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+        {isTodoListLoading
+          ? Array.from({ length: 5 }).map((_, index) => (
+              <div
+                key={index}
+                className="h-14 animate-pulse rounded-sm bg-slate-400 bg-opacity-40"></div>
+            ))
+          : listTodo
+              ?.filter((todo) => todo.id !== toBeDeletedId)
+              ?.map((todo) => (
+                <div
+                  key={todo.id}
+                  className="flex items-center justify-between rounded bg-slate-100 p-3">
+                  <div className="flex items-center gap-2">
+                    <Button
+                      variant="link"
+                      onClick={() => {
+                        if (todo.completed) return;
+                        handleCompleteTodo(todo.id, !todo.completed);
+                      }}>
+                      {todo.completed ? <IconCircleCheckFilled /> : <IconCircle />}
+                    </Button>
+                    <h6>{todo.title}</h6>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <div>{getPriority(todo.priority)}</div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{capitalizeFirstLetter(todo.priority)}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
 
-                <Button
-                  variant="link"
-                  onClick={() => {
-                    handleDeleteClick(todo.id);
-                  }}>
-                  <IconTrash />
-                </Button>
-              </div>
-            </div>
-          ))}
+                    <Button
+                      variant="link"
+                      onClick={() => {
+                        handleDeleteClick(todo.id);
+                      }}>
+                      <IconTrash />
+                    </Button>
+                  </div>
+                </div>
+              ))}
       </div>
     </div>
   );

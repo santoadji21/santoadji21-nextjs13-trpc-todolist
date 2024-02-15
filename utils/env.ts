@@ -14,7 +14,6 @@ const rawEnv = {
 const result = serverEnvSchema.safeParse(rawEnv);
 
 if (!result.success) {
-  console.error(result.error);
   throw new Error(`Invalid environment variables: ${result.error}`);
 }
 
